@@ -1,6 +1,6 @@
 # Anto Joseph Film Company — website concept
 
-A responsive English-language static website with real film posters, hover interactions, and social links. It uses plain HTML, CSS, and JavaScript, so there is no build step or server requirement.
+A responsive English-language static website with 20 real film posters, a poster carousel, hover interactions, and social links. The carousel advances automatically while visible and provides Previous, Next, and Pause/Play controls. Visitors can also swipe the posters. Automatic movement is disabled when reduced motion is requested. It uses plain HTML, CSS, and JavaScript, so there is no build step or server requirement.
 
 The short Anto Joseph biography in the company section is based on his [IMDb biography](https://www.imdb.com/name/nm2102049/bio/) and [BookMyShow profile](https://in.bookmyshow.com/person/anto-joseph/IEIN046080).
 
