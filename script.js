@@ -1,6 +1,5 @@
 const menuButton = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
-const languageButton = document.querySelector('.language-toggle');
 
 function closeMenu() {
   menuButton.setAttribute('aria-expanded', 'false');
@@ -19,21 +18,6 @@ menuButton.addEventListener('click', () => {
 
 mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-
-function setLanguage(language) {
-  const malayalam = language === 'ml';
-  document.documentElement.lang = language;
-  document.querySelectorAll('[data-en][data-ml]').forEach(element => {
-    element.innerHTML = element.dataset[language];
-  });
-  languageButton.textContent = malayalam ? 'ENGLISH' : 'മലയാളം';
-  languageButton.setAttribute('aria-label', malayalam ? 'Switch to English' : 'Switch to Malayalam');
-  languageButton.setAttribute('aria-pressed', String(malayalam));
-  try { localStorage.setItem('ajfc-language', language); } catch (_) { /* Storage may be disabled. */ }
-}
-
-languageButton.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'ml' : 'en'));
-try { if (localStorage.getItem('ajfc-language') === 'ml') setLanguage('ml'); } catch (_) { /* Keep the default. */ }
 
 document.getElementById('year').textContent = new Date().getFullYear();
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
