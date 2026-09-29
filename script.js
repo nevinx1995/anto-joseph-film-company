@@ -41,6 +41,7 @@ let playbackPaused = false;
 let playbackTimer;
 
 function visiblePosters() {
+  if (window.matchMedia('(max-width: 560px)').matches) return 1;
   if (window.matchMedia('(max-width: 800px)').matches) return 2;
   if (window.matchMedia('(max-width: 1100px)').matches) return 3;
   return 4;
